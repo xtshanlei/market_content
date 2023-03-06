@@ -8,7 +8,7 @@ openai.api_key = st.secrets['api_key']
 
 def text_generation(content_types, bullet_points,slogan):
     response = openai.ChatCompletion.create(
-      model="gpt-3.5-turbo",temperature=0.7,max_tokens=900,
+      model="gpt-3.5-turbo",temperature=0.7,
       messages=[
             {"role": "system", "content": "You are an expert in the marketing industry. Write a {} based on the bullet points from the message. Make sure it's funny and easy to read. Your slogan is '{}'. If it's a blog, the word counts should be around 500.".format(content_types,slogan)},
             {"role": "user", "content": "{}".format(bullet_points)},
