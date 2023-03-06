@@ -21,6 +21,6 @@ slogan = st.sidebar.text_input('What is your marketing slogan?')
 bullet_points = st.sidebar.text_area('Bullet points for your content:')
 
 st.header('Generated Content by AI')
-if st.button('Generate!'):
+if st.sidebar.button('Generate!'):
     response = text_generation(content_types,bullet_points,slogan)
     st.write(response)
