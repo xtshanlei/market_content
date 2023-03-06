@@ -17,7 +17,7 @@ def text_generation(content_types, bullet_points,slogan):
 
 
 content_types = ', and '.join(st.multiselect('What types of content do you want to generate?',['blog','tweet','facebook post'],['blog']))
-slogan = st.text('What is your marketing slogan?')
+slogan = st.text_input('What is your marketing slogan?')
 bullet_points = st.text_area('Bullet points for your content:')
 
 if st.button('Generate!'):
