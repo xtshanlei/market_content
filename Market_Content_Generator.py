@@ -14,4 +14,4 @@ response = openai.ChatCompletion.create(
         {"role": "user", "content": "Where was it played?"}
     ]
 )
-st.write(response[‘choices’][0][‘message’][‘content’])
+st.write(response['choices'][0]['message']['content'])
