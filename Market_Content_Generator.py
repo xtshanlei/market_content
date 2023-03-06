@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 
 
-st.title('Automatic Marketing Content Generator')
+st.sidebar.title('Automatic Marketing Content Generator')
 openai.api_key = st.secrets['api_key']
 
 def text_generation(content_types, bullet_points,slogan):
@@ -16,10 +16,11 @@ def text_generation(content_types, bullet_points,slogan):
     return response['choices'][0]['message']['content']
 
 
-content_types = ', and '.join(st.multiselect('What types of content do you want to generate?',['blog','tweet','facebook post'],['blog']))
-slogan = st.text_input('What is your marketing slogan?')
-bullet_points = st.text_area('Bullet points for your content:')
+content_types = ', and '.join(st.sidebar.multiselect('What types of content do you want to generate?',['blog','tweet','facebook post'],['blog']))
+slogan = st.sidebar.text_input('What is your marketing slogan?')
+bullet_points = st.sidebar.text_area('Bullet points for your content:')
 
+st.header('Generated Content by AI')
 if st.button('Generate!'):
     response = text_generation(content_types,bullet_points,slogan)
     st.write(response)
