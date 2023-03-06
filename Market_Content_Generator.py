@@ -2,7 +2,8 @@ import streamlit as st
 import openai
 
 
-st.sidebar.title('Automatic Marketing Content Generator')
+st.sidebar.title('Marketing Content Generator')
+st.sidebar.write('By Yulei')
 openai.api_key = st.secrets['api_key']
 
 def text_generation(content_types, bullet_points,slogan):
