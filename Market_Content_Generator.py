@@ -17,7 +17,7 @@ def text_generation(content_types, bullet_points,slogan):
     return response['choices'][0]['message']['content']
 
 
-content_types = ', and '.join(st.sidebar.multiselect('What types of content do you want to generate?',['blog','tweet','facebook post'],['blog']))
+content_types = ', and '.join(st.sidebar.multiselect('What types of content do you want to generate?',['blog','tweet','facebook post','press release'],['blog']))
 slogan = st.sidebar.text_input('What is your marketing slogan?')
 bullet_points = st.sidebar.text_area('Bullet points for your content:')
 
