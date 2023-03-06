@@ -16,7 +16,7 @@ def text_generation(content_types, bullet_points):
     return response['choices'][0]['message']['content']
 
 
-content_types = st.multiselect('What types of content do you want to generate?',['blog','tweet','facebook post'],['blog']).join(', and ')
+content_types = ', and '.join(st.multiselect('What types of content do you want to generate?',['blog','tweet','facebook post'],['blog']))
 bullet_points = st.text_area('Bullet points for your content:')
 st.write(bullet_points)
 if st.button('Generate!'):
