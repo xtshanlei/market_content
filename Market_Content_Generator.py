@@ -16,5 +16,5 @@ def text_generation(bullet_points):
     return response['choices'][0]['message']['content']
 
 bullet_points = st.text_area('Bullet points for your content:')
-
-st.write(text_generation(bullet_points))
+if bullet_points:
+    st.write(text_generation(bullet_points))
